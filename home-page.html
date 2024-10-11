@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="icon" type="image/png" href="favicon_io (2)/favicon-32x32.png">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: black;
+      font-family: 'SF Distant Galaxy';
+      overflow: hidden;
+    }
+
+    .sidebar {
+      height: 100%;
+      margin: 0;
+      width: 20vw;
+      border: 2px solid rgb(0, 0, 0);
+      position: fixed;
+      background-color: rgba(255, 255, 255, 0.1);
+      top: 0;
+      right: -20vw;
+      opacity: 0;
+      transition: right 0.3s ease, opacity 0.3s ease;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    body:hover .sidebar {
+      right: 0;
+      opacity: 1;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      margin-top: 45px;
+      margin-bottom: 30px;
+      color: rgb(255, 255, 255);
+      font-family: 'SF Distant Galaxy';
+      font-weight: bold;
+      font-size: 1.5rem;
+      transition: all 0.3s;
+    }
+
+    .sidebar a:hover {
+      font-size: 1.8rem;
+      /* Further decrease font size for smaller screens */
+      opacity: 0.8;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .sidebar a:active {
+      font-size: 2rem;
+      /* Further decrease font size for smaller screens */
+      opacity: 0.7;
+      cursor: pointer;
+    }
+
+    .border-line {
+      background: linear-gradient(90deg, rgb(210, 185, 223), 90%, black);
+      height: 1px;
+      width: 19.5vw;
+      margin-top: 4px;
+    }
+
+    #heading {
+      position: fixed;
+      width: 100%;
+      padding: 32px;
+    }
+
+    .border {
+      background: linear-gradient(90deg, gray, 90%, black);
+      height: 2px;
+      width: 70vw;
+      margin-top: 4px;
+    }
+
+    h2 {
+      color: rgb(255, 255, 255);
+      font-size: 3rem;
+      margin: 0px;
+      font-weight: 100;
+    }
+
+    #progress-container {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #progress {
+      font-size: 3rem;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 60vw;
+        /* Increase width for mobile */
+        right: -60vw;
+        /* Adjust to match */
+      }
+
+      body:hover .sidebar {
+        right: 0;
+        /* Show sidebar on hover */
+      }
+
+      .sidebar a {
+        font-size: 1.2rem;
+        /* Decrease font size for mobile */
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        /* Adjust heading size */
+      }
+
+      #progress {
+        font-size: 2rem;
+        /* Adjust progress font size */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .sidebar {
+        width: 80vw;
+        /* Further increase for smaller screens */
+        right: -80vw;
+        /* Adjust to match */
+      }
+
+      body:hover .sidebar {
+        right: 0;
+        /* Show sidebar on hover */
+      }
+
+      .sidebar a {
+        font-size: 1rem;
+        /* Further decrease font size for smaller screens */
+      }
+
+      h2 {
+        font-size: 2rem;
+        /* Adjust heading size */
+      }
+
+      #progress {
+        font-size: 1.5rem;
+        /* Adjust progress font size */
+      }
+    }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "../build/three.module.js",
+        "three/addons/": "./jsm/"
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <div>
+    <div class="sidebar">
+      <a href="home-page.html">Home</a>
+      <div class="border-line"></div>
+      <a href="about.html">About</a>
+      <div class="border-line"></div>
+      <a href="skills.html">Skills</a>
+      <div class="border-line"></div>
+      <a href="contactme.html">Contact me</a>
+    </div>
+    <div id="heading">
+      <h2>My Portfolio</h2>
+      <div class="border"></div>
+    </div>
+    <div id="progress-container">
+      <div id="progress">Here is the Portfolio...</div>
+    </div>
+  </div>
+
+  <script src="portfolio-audio.js"></script>
+  <script type="module" src="home-page.js"></script>
+
+</body>
+
+</html>
