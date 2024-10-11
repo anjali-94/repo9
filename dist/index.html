@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whack-a-Mole</title>
+  <link rel="icon" type="image/png" href="/assets/favicon-32x32-Bf1i8Pcv.png">
+  <style>
+    body {
+      display: flex;
+      /* Use flexbox to center content */
+      justify-content: center;
+      /* Center horizontally */
+      align-items: center;
+      /* Center vertically */
+      background-image: url('/assets/d7d7346534a8cb23efcb35ab5d408efb-PH5uixUA.jpg');
+      background-position: center;
+      background-size: cover;
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      /* Center text in the container */
+    }
+
+    .play-button {
+      border-radius: 50px;
+      width: 180px;
+      height: 80px;
+      font-size: 2.5rem;
+      font-weight: bolder;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+      background-color: rgb(39, 109, 153);
+      color: white;
+      padding: 10px 20px;
+      /* Add padding for better touch area */
+      max-width: 90%;
+      /* Make the button responsive */
+    }
+
+    .play-button:hover {
+      background-color: rgb(39, 109, 153);
+      color: white;
+      opacity: 0.8;
+      width: 220px;
+      /* Optional: can remove or adjust */
+      height: 80px;
+      font-size: 2.8rem;
+    }
+
+    .game-name {
+      width: 100px;
+      border: 3px solid red;
+      margin-left: 3vw;
+    }
+
+    .name img {
+      margin-left: 0.5vw;
+      width: 40vw;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="name">
+    <img src="/assets/whack-a-mole__1_-removebg-preview-DFdFCO6L.png" alt="">
+  </div>
+  <div class="container">
+    <button class="play-button" aria-label="Start the game" onclick="playAudioAndRedirect()">Play</button>
+  </div>
+
+  <audio id="buttonClickAudio" src="music/button-pressed-38129.mp3" preload="auto"></audio>
+
+  <audio autoplay>
+    <source src="/assets/Fluffing-a-Duck(chosic.com)-DOrfhs38.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
