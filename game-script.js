@@ -53,8 +53,9 @@ let score = 0;
 const monkeyDuration = 1000; // Duration for which monkey stays visible (in ms)
 let currentMonkey = null; // Current visible monkey
 
+
 function loadMonkeyModel(position) {
-  loader.load('/public/diglett.glb', function (gltf) {
+  loader.load('/public/mole_day_diglett/scene.gltf', function (gltf) {
     const monkey = gltf.scene;
     monkey.scale.set(4, 4, 4); // Smaller monkey size
     monkey.position.set(position[0], -100, position[2]); // Initially below ground level
