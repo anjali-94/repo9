@@ -125,7 +125,7 @@ window.addEventListener('click', (event) => {
     const monkey = monkeys.find(m => m.contains(clickedMesh)); 
 
     if (monkey) {
-      monkey.position.y = -10; // Move the whole monkey below ground
+      monkey.position.y = -50; // Move the whole monkey below ground
     }
 
     if (monkey === currentMonkey) {
