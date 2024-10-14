@@ -37,7 +37,7 @@ controls.maxPolarAngle = Math.PI / 2;
 controls.autoRotate = false;
 controls.target.set(0, 1, 0);
 
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Ambient light for overall lighting
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); 
 scene.add(ambientLight);
 
 const spotLight = new THREE.SpotLight(0xffffff, 1);
@@ -48,26 +48,23 @@ scene.add(spotLight);
 
 const loader = new GLTFLoader();
 
-// Create a parent object for the background
 const backgroundParent = new THREE.Object3D();
 scene.add(backgroundParent);
 
 // Load background model
 loader.load('/public/free_-_skybox_fairy_castle_night/scene.gltf', (gltf) => {
     const backgroundModel = gltf.scene;
-    backgroundParent.add(backgroundModel); // Attach to parent
+    backgroundParent.add(backgroundModel); 
 
-    // Hide loading screen after character is loaded
     document.getElementById('progress-container').style.display = 'none';
 });
 
-let rotateBackground = true; // Flag to control background rotation
+let rotateBackground = true; 
 
 function animate() {
     requestAnimationFrame(animate);
     resizeRendererToDisplaySize(renderer);
 
-    // Rotate background only if the flag is true
     if (rotateBackground) {
         backgroundParent.rotation.y += 0.006;
     }
@@ -84,8 +81,7 @@ window.addEventListener('resize', () => {
     resizeRendererToDisplaySize(renderer);
 });
 
-// Toggle rotation on click
 window.addEventListener('click', () => {
-    rotateBackground = !rotateBackground; // Toggle the rotation state
+    rotateBackground = !rotateBackground; 
 });
 

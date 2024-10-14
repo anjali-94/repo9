@@ -56,7 +56,6 @@
 
     .sidebar a:hover {
       font-size: 1.8rem;
-      /* Further decrease font size for smaller screens */
       opacity: 0.8;
       cursor: pointer;
       transition: all 0.3s;
@@ -64,7 +63,6 @@
 
     .sidebar a:active {
       font-size: 2rem;
-      /* Further decrease font size for smaller screens */
       opacity: 0.7;
       cursor: pointer;
     }
@@ -113,58 +111,46 @@
     @media (max-width: 768px) {
       .sidebar {
         width: 60vw;
-        /* Increase width for mobile */
         right: -60vw;
-        /* Adjust to match */
       }
 
       body:hover .sidebar {
         right: 0;
-        /* Show sidebar on hover */
       }
 
       .sidebar a {
         font-size: 1.2rem;
-        /* Decrease font size for mobile */
       }
 
       h2 {
         font-size: 2.5rem;
-        /* Adjust heading size */
       }
 
       #progress {
         font-size: 2rem;
-        /* Adjust progress font size */
       }
     }
 
     @media (max-width: 480px) {
       .sidebar {
         width: 80vw;
-        /* Further increase for smaller screens */
         right: -80vw;
-        /* Adjust to match */
       }
 
       body:hover .sidebar {
         right: 0;
-        /* Show sidebar on hover */
       }
 
       .sidebar a {
         font-size: 1rem;
-        /* Further decrease font size for smaller screens */
       }
 
       h2 {
         font-size: 2rem;
-        /* Adjust heading size */
       }
 
       #progress {
         font-size: 1.5rem;
-        /* Adjust progress font size */
       }
     }
   </style>
@@ -197,7 +183,7 @@
       <div class="border"></div>
     </div>
     <div id="progress-container">
-      <div id="progress">Here is the Portfolio...</div>
+      <div id="progress">Loading..</div>
     </div>
   </div>
 

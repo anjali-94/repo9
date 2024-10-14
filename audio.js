@@ -12,7 +12,6 @@ function playAudio() {
     });
 }
 
-
 // Automatically play audio on page load
 window.addEventListener('load', () => {
     playAudio();
