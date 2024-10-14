@@ -140,27 +140,10 @@ function animate() {
   controls.update();
 }
 
-// Adjust for screen size changes
-function adjustForScreenSize() {
-  const isMobile = window.innerWidth <= 768;
-  
-  if (isMobile) {
-    camera.position.set(0, 6, 12); // Camera position for mobile
-    monkeys.forEach(monkey => monkey.scale.set(2.5, 2.5, 2.5)); // Scale down monkeys
-    ground.scale.set(0.8, 0.8, 0.8); // Adjust ground size
-  } else {
-    camera.position.set(0, 8, 16); // Default camera for larger screens
-    monkeys.forEach(monkey => monkey.scale.set(4, 4, 4));
-    ground.scale.set(1, 1, 1);
-  }
-}
-
-
 window.addEventListener('resize', () => {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
-  adjustForScreenSize();
 });
 
 animate();
