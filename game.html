@@ -14,7 +14,6 @@
       background-image: url('images/background.jpg');
       background-position: center;
       background-size: cover;
-      height: 100vh;
       background-repeat: no-repeat;
       background-color: transparent;
     }
@@ -24,32 +23,12 @@
       top: 10px;
       left: 10px;
       padding: 10px 20px;
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: bold;
       color: white;
+      border-radius: 10px;
       z-index: 10;
     }
-    p{
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 2rem;
-      color: rgb(135, 135, 141);
-      font-weight: bold;
-      z-index: 10;
-    }
-    @media screen and (max-width: 768px) {
-      #score {
-        font-size: 1.8rem;
-        padding: 8px 16px;
-      }
-    }
-
-    canvas {
-      display: block;
-      width: 100vw;
-      height: 100vh;
-    }
-
   </style>
   <script type="importmap">
     {
@@ -65,7 +44,6 @@
 <body>
 
   <div id="score">Score: 0</div>
-  <p>Tap the mole 3 times to open the portfolio!</p>
 
   <audio id="popSound" src="music/pop.mp3"></audio>
 
@@ -73,6 +51,8 @@
 
   <script type="module" src="game-script.js"></script>
   
+
+
 
 </body>
 
