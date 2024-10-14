@@ -23,13 +23,13 @@
     .sidebar {
       height: 100%;
       margin: 0;
-      width: 20vw;
+      width: 25vw;
       border: 2px solid rgb(0, 0, 0);
       position: fixed;
       background-color: rgba(255, 255, 255, 0.1);
       top: 0;
-      right: -20vw;
-      opacity: 0;
+      right: 0;
+      opacity: 1;
       transition: right 0.3s ease, opacity 0.3s ease;
       box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
       z-index: 10;
@@ -38,39 +38,31 @@
       align-items: center;
     }
 
-    body:hover .sidebar {
-      right: 0;
-      opacity: 1;
-    }
-
     .sidebar a {
       text-decoration: none;
-      margin-top: 45px;
+      margin-top: 48px;
       margin-bottom: 30px;
       color: rgb(255, 255, 255);
       font-family: 'SF Distant Galaxy';
       font-weight: bold;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       transition: all 0.3s;
     }
 
     .sidebar a:hover {
       font-size: 1.8rem;
       opacity: 0.8;
-      cursor: pointer;
-      transition: all 0.3s;
     }
 
     .sidebar a:active {
       font-size: 2rem;
       opacity: 0.7;
-      cursor: pointer;
     }
 
     .border-line {
       background: linear-gradient(90deg, rgb(210, 185, 223), 90%, black);
       height: 1px;
-      width: 19.5vw;
+      width: 24.5vw;
       margin-top: 4px;
     }
 
@@ -83,7 +75,7 @@
     .border {
       background: linear-gradient(90deg, gray, 90%, black);
       height: 2px;
-      width: 70vw;
+      width: 65vw;
       margin-top: 4px;
     }
 
@@ -110,22 +102,29 @@
 
     @media (max-width: 768px) {
       .sidebar {
-        width: 50vw;
-        right: 0;
-        opacity: 10;
+        width: 20vw;
+      }
+
+      body {
+        overflow: auto;
+        /* Allow scrolling on smaller screens */
       }
 
       .border {
-      width: 30vw;
-      margin-top: 4px;
-    }
+        width: 30vw;
+        margin-top: 4px;
+      }
 
-    h2 {
-      font-size: 1.5rem;
-    }
+      .border-line {
+        width: 19.6vw;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
 
       .sidebar a {
-        font-size: 1rem;
+        font-size: 1.4rem;
       }
 
       #progress {
