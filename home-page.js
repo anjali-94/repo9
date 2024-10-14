@@ -16,7 +16,6 @@ function resizeRendererToDisplaySize(renderer) {
 
 resizeRendererToDisplaySize(renderer);
 renderer.setClearColor(0x000000);
-renderer.setPixelRatio(window.devicePixelRatio);
 document.body.appendChild(renderer.domElement);
 
 const scene = new THREE.Scene();
@@ -64,11 +63,9 @@ let rotateBackground = true;
 function animate() {
     requestAnimationFrame(animate);
     resizeRendererToDisplaySize(renderer);
-
     if (rotateBackground) {
         backgroundParent.rotation.y += 0.006;
     }
-
     controls.update();
     renderer.render(scene, camera);
 }
@@ -79,12 +76,13 @@ animate();
 function updateCameraSettings() {
     const aspect = window.innerWidth / window.innerHeight;
     camera.aspect = aspect;
-
     // Adjust the camera position based on viewport size
     if (window.innerWidth < 768) {
-        camera.position.set(10, 0, 200); // Closer for mobile
+        camera.position.set(10, 5, 300); // Closer for mobile
+        camera.fov = 60;
     } else {
         camera.position.set(10, 5, 600); // Default for larger screens
+        camera.fov = 75; 
     }
 
     camera.updateProjectionMatrix();

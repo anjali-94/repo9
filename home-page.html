@@ -17,7 +17,6 @@
     body {
       background-color: black;
       font-family: 'SF Distant Galaxy';
-      overflow: hidden;
     }
 
     .sidebar {
@@ -30,9 +29,8 @@
       top: 0;
       right: 0;
       opacity: 1;
-      transition: right 0.3s ease, opacity 0.3s ease;
       box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-      z-index: 10;
+      z-index: 9999;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -50,7 +48,7 @@
     }
 
     .sidebar a:hover {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       opacity: 0.8;
     }
 
@@ -101,13 +99,8 @@
     }
 
     @media (max-width: 768px) {
-      .sidebar {
-        width: 20vw;
-      }
-
       body {
         overflow: auto;
-        /* Allow scrolling on smaller screens */
       }
 
       .border {
@@ -116,7 +109,7 @@
       }
 
       .border-line {
-        width: 19.6vw;
+        width: 24.4vw;
       }
 
       h2 {
@@ -145,7 +138,6 @@
 </head>
 
 <body>
-
   <div>
     <div class="sidebar">
       <a href="home-page.html">Home</a>
