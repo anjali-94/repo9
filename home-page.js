@@ -21,7 +21,7 @@ document.body.appendChild(renderer.domElement);
 
 const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 2000);
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.set(10, 5, 600);
 
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -75,10 +75,28 @@ function animate() {
 
 animate();
 
+// Adjust the camera settings for better responsiveness
+function updateCameraSettings() {
+    const aspect = window.innerWidth / window.innerHeight;
+    camera.aspect = aspect;
+
+    // Adjust the camera position based on viewport size
+    if (window.innerWidth < 768) {
+        camera.position.set(10, 0, 200); // Closer for mobile
+    } else {
+        camera.position.set(10, 5, 600); // Default for larger screens
+    }
+
+    camera.updateProjectionMatrix();
+}
+
+updateCameraSettings();
+
 window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     resizeRendererToDisplaySize(renderer);
+    updateCameraSettings();
 });
 
 window.addEventListener('click', () => {
