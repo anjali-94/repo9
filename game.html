@@ -6,32 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Whack-a-Mole</title>
   <link rel="icon" type="image/png" href="favicon_io (2)/favicon-32x32.png">
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      height: 100vh;
-      font-family: Arial, sans-serif;
-      background-image: url('images/background.jpg');
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-color: transparent;
-    }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 
-    #score {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      padding: 10px 20px;
-      font-size: 2rem;
-      font-weight: bold;
-      color: white;
-      border-radius: 10px;
-      z-index: 10;
-    }
-  
-  </style>
   <script type="importmap">
     {
         "imports": {
@@ -40,21 +17,80 @@
             "three/addons/controls/": "https://unpkg.com/three@0.144.0/examples/jsm/controls/"
         }
     }
-    </script>
+  </script>
 </head>
 
 <body>
 
+  <canvas id="particleCanvas"></canvas>
+
   <div id="score">Score: 0</div>
+
+  <div id="notification" class="popup-box hidden">
+    <div class="popup-content" id="notificationContent"></div>
+  </div>
+
+  <div id="sidebar">
+    <h2>2024 Anjali's Portfolio.</h2>
+    <div id="sidebar-buttons">
+      <button id="homeButton" class="button hidden"><i class="fas fa-home"></i> Home
+        <div class="border-line"></div>
+      </button>
+      <button id="aboutButton" class="button hidden"><i class="fas fa-user"></i> About
+        <div class="border-line"></div>
+      </button>
+      <button id="skillsButton" class="button hidden"><i class="fas fa-tools"></i> Skills
+        <div class="border-line"></div>
+      </button>
+      <button id="educationButton" class="button hidden"><i class="fas fa-graduation-cap"></i> Education
+        <div class="border-line"></div>
+      </button>
+      <button id="experienceButton" class="button hidden"><i class="fas fa-briefcase"></i> Experience
+        <div class="border-line"></div>
+      </button>
+      <button id="contactButton" class="button hidden"><i class="fas fa-envelope"></i> Contact
+        <div class="border-line"></div>
+      </button>
+    </div>
+
+    <div class="in-box">
+      <a href="https://leetcode.com/u/anjali9123/" target="_blank"><img class="icon" src="images/hq720.jpg"
+          alt="Leetcode-logo"></a>
+      <a href="https://github.com/anjali-94" target="_blank"><img class="icon" src="images/download.png"
+          alt="github-logo"></a>
+      <a href="https://www.linkedin.com/in/anjali-08a835249/" target="_blank"><img class="icon"
+          src="images/LinkedIn_logo_initials.png" alt="linkedin-logo"></a>
+      <a href="https://www.instagram.com/anjali.sharma_03/" target="_blank"><img class="icon"
+          src="images/Instagram_icon.png.webp" alt="instagram-logo"></a>
+    </div>
+  </div>
+
+  <!-- Instruction Popup Box Structure -->
+  <div class="notification">
+    <div class="popup-notification">
+      <span class="close-btn cross-btn" onclick="closeNotification()">×</span>
+      <p><span>Congratulations! </span>All features are now unlocked. You are welcome to review my background and
+        qualifications.</p>
+    </div>
+  </div>
+
+  <!-- Full-Screen Overlay for All Buttons -->
+  <div id="fullScreenOverlay" class="overlay">
+    <div class="overlay-content">
+      <h1 id="overlayTitle">Welcome</h1>
+      <p id="overlayText">This is the content for the selected button.</p>
+      <button id="closeOverlay" class="close-btn">Close</button>
+    </div>
+  </div>
+
+  <div id="contactme"><a href="mailto:anjalishr987@gmail.com" target="_blank">Contact Me</a>
+  </div>
 
   <audio id="popSound" src="music/pop.mp3"></audio>
 
   <script src="audio.js"></script>
 
   <script type="module" src="game-script.js"></script>
-  
-
-
 
 </body>
 
