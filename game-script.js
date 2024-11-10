@@ -50,14 +50,14 @@ import * as THREE from 'three';
     const loader = new GLTFLoader();
     let monkeys = [];
     let score = 0;
-    const monkeyDuration = 1000;
+    const monkeyDuration = 950;
     let currentMonkey = null;
 
     function loadMonkeyModel(position) {
       loader.load('/public/diglett.glb', function (gltf) {
         const monkey = gltf.scene;
         monkey.scale.set(4, 4, 4);
-        monkey.position.set(position[0], -100, position[2]);
+        monkey.position.set(position[0], -1000, position[2]);
         scene.add(monkey);
         monkeys.push(monkey);
       }, undefined, function (error) {
@@ -134,7 +134,7 @@ import * as THREE from 'three';
 
     function showMonkey() {
       if (currentMonkey) {
-        currentMonkey.position.y = -50; // Move it below the ground to hide
+        currentMonkey.position.y = -1000; // Move it below the ground to hide
       }
 
       const randomIndex = Math.floor(Math.random() * holePositions.length);
@@ -145,7 +145,7 @@ import * as THREE from 'three';
 
       setTimeout(() => {
         if (currentMonkey === monkeys[randomIndex]) {
-          currentMonkey.position.y = -50; // Hide monkey after duration
+          currentMonkey.position.y = -1000; // Hide monkey after duration
           currentMonkey = null;
         }
       }, monkeyDuration);
