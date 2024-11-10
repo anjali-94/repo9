@@ -57,6 +57,37 @@ body {
   display: none;
 }
 
+
+@media screen and (max-width: 900px) {
+  #sidebar {
+    max-width: 45vw; 
+    width: 40vw;
+    padding: 10px; 
+  }
+  #sidebar h2 {
+    font-size: 0.9rem;
+    top: 90vh;
+  }
+  #sidebar #sidebar-buttons {
+    margin-top: 20px;
+  }
+  #sidebar .button {
+    padding: 12px 20px;
+    font-size: 1.4rem; 
+    margin-top: 20px;  
+    width: 40vw;
+  }
+  .in-box {
+    margin-top: 30px;
+  }
+  .in-box img {
+    max-height: 7vh;
+    margin-left: 0.6vw;
+    max-width: 7vw;
+  }
+
+}
+
 #sidebar-buttons {
   margin-top: 10px;
 }
@@ -66,6 +97,7 @@ body {
   background-color: transparent;
   color: black;
   font-weight: bolder;
+  width: 16vw;
   border: none;
   cursor: pointer;
   transition: transform 0.3s, opacity 0.3s, color 0.3s ease, background-color 0.3s ease;
@@ -103,7 +135,7 @@ body {
 .border-line {
   background: linear-gradient(90deg, rgb(210, 185, 223), 90%, black);
   height: 1px;
-  width: 14vw;
+  max-width: 14vw;
   margin-top: 15px;
 }
 
@@ -205,11 +237,6 @@ body {
   }
 }
 
-@media screen and (max-width: 600px) {
-  #sidebar {
-    width: 100vw;
-  }
-}
 
 .icon {
   display: none;
@@ -217,7 +244,7 @@ body {
 
 .notification {
   display: none;
-  width: 50vw;
+  max-width: 55vw;
   height: 35vh;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
@@ -248,7 +275,7 @@ body {
 .popup-notification p {
   margin-top: 2px;
   padding: 15px 15px;
-  width: 87%;
+  max-width: 85%;
   font-size: 18px;
   border-radius: 15px;
   height: 30vh;
@@ -258,7 +285,7 @@ body {
 }
 
 .popup-notification p span {
-  font-size: 28px;
+  font-size: 1.6rem;
   color: #1ad717;
   display: block;
   margin-bottom: 5px;
@@ -276,13 +303,39 @@ body {
   }
 }
 
-.cross-btn {
+.cross-btn.close-btn {
+  z-index: 100;
+  margin-top: 10px;
+  font-weight: bolder;
+  position: absolute;
+  top: -1px;
+  right: 1px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background-color: #FF4500;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.close-btn {
+  margin-top: 20px;
+  font-weight: bolder;
+  font-size: 1.8rem;
   position: absolute;
   top: 10px;
   right: 15px;
-  font-weight: bolder;
-  font-size: 1.5rem;
+  padding: 8px 15px;
+  background-color: #FF4500;
+  border: none;
+  color: white;
   cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
 }
 
 .overlay {
@@ -311,23 +364,19 @@ body {
   font-size: 1.8rem;
 }
 
-.close-btn {
-  margin-top: 20px;
-  font-weight: bolder;
-  font-size: 1.5rem;
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  padding: 8px 15px;
-  background-color: #FF4500;
-  border: none;
-  color: white;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
 
-.close-btn:hover {
-  transform: scale(1.1);
+/* Mobile Styles for Overlay */
+@media screen and (max-width: 600px) {
+  .overlay-content {
+    width: 90%; 
+    font-size: 1.3rem; 
+  }
+
+  .overlay .close-btn {
+    font-size: 1rem; 
+    top: 20px;
+    right: 20px; 
+  }
 }
 
 @keyframes fadeIn {
