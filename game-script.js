@@ -214,7 +214,7 @@ import * as THREE from 'three';
       },
       skillsButton: {
         title: "My Skills",
-        text: "I specialize in building dynamic, immersive web experiences using modern technologies. I’m proficient in JavaScript, React.js, Three,js, Node.js, Tailwind CSS, and SQL, enabling full-stack development. I’ve honed my problem-solving skills through extensive practice in data structures and algorithms, and I currently focus on Python and C/C++ for algorithm-heavy projects. Whether building user-friendly applications or optimizing performance, I enjoy turning complex challenges into elegant solutions."
+        text: "Highly skilled in programming languages including C, C++, Python, PHP, JavaScript, TypeScript, and frameworks like React.js. Proficient in modern web technologies and tools such as Three.js, Node.js, Django, REST APIs, Machine Learning, Tailwind CSS, Bootstrap, WordPress, and Figma. Experienced in managing relational and non-relational databases, including MySQL, MongoDB, PostgreSQL, and deploying solutions on cloud platforms like AWS, Azure, and Google Cloud Platform (GCP). Demonstrated expertise in version control systems such as Git, GitHub, GitLab, and adept at data structures and algorithms, solving complex technical challenges with efficiency. Proven ability to collaborate in team environments, lead projects, and communicate effectively. Skilled in delivering optimized, scalable, and user-centric solutions tailored to diverse client needs."
       },
       educationButton: {
         title: "Education",

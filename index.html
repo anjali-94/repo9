@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -62,12 +62,47 @@
       color: rgb(32, 29, 29);
       font-size: 1.5rem;
     }
+
+    .instructions {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 90%;
+      text-align: left;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    .instructions h3 {
+      font-size: 1.8rem;
+      color: rgb(39, 109, 153);
+      margin-bottom: 10px;
+    }
+
+    .instructions ul {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      list-style: disc;
+      padding-left: 20px;
+    }
   </style>
 </head>
 
 <body>
   <div class="name">
     <img src="images/whack-a-mole__1_-removebg-preview.png" alt="">
+  </div>
+  <div class="instructions">
+    <h3>How to Play Whack-a-Mole:</h3>
+    <ul>
+      <li>Click the "Play" button to start the game.</li>
+      <li>Moles will pop up randomly on your screen—tap them quickly to score points.</li>
+      <li>Each successful hit unlocks a section of my portfolio.</li>
+      <li>After 11 taps, the game will vanish, revealing the complete portfolio.</li>
+      <li>Enjoy exploring my work while having fun!</li>
+    </ul>
   </div>
   <div class="container">
     <button class="play-button" aria-label="Start the game" onclick="playAudioAndRedirect()">Play</button>
@@ -83,6 +118,166 @@
 
   <script src="main.js"></script>
 
+</body>
+
+</html> -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whack-a-Mole</title>
+  <link rel="icon" type="image/png" href="favicon_io (2)/favicon-32x32.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url('images/d7d7346534a8cb23efcb35ab5d408efb.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100vh;
+      font-family: 'Arial', sans-serif;
+      color: #333;
+    }
+
+    .name img {
+      width: 100vw;
+      max-width: 350px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    .instructions {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 25px;
+      margin: px 10px;
+      max-width: 90%;
+      text-align: left;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      font-size: 1rem;
+    }
+
+    .instructions h3 {
+      font-size: 1.9rem;
+      color: rgb(39, 109, 153);
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .instructions ul {
+      list-style: disc;
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .play-button {
+      border-radius: 50px;
+      width: 195px;
+      height: 75px;
+      font-size: 2rem;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      background: linear-gradient(to right, #2679c3, #1e5b8f);
+      color: white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      margin-top: 20px;
+    }
+
+    .play-button:hover {
+      transform: scale(1.1);
+      background: linear-gradient(to right, #1e5b8f, #2679c3);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      .name img {
+        width: 70vw;
+      }
+
+      .instructions {
+        padding: 15px;
+      }
+
+      .play-button {
+        width: 150px;
+        height: 60px;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="name">
+    <img src="images/whack-a-mole__1_-removebg-preview.png" alt="Whack-a-Mole Game Logo">
+  </div>
+
+  <div class="instructions">
+    <h3>How to Play Whack-a-Mole:</h3>
+    <ul>
+      <li>Click the "Play" button to start the game.</li>
+      <li>Moles will pop up randomly on your screen—tap them quickly to score points.</li>
+      <li>Each successful hit unlocks a section of my portfolio.</li>
+      <li>After 11 taps, the game will vanish, revealing the complete portfolio.</li>
+      <li>Enjoy exploring my work while having fun!</li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <button class="play-button" aria-label="Start the game" onclick="playAudioAndRedirect()">Play</button>
+  </div>
+
+  <audio id="buttonClickAudio" src="music/button-pressed-38129.mp3" preload="auto"></audio>
+
+  <audio autoplay>
+    <source src="music/Fluffing-a-Duck(chosic.com).mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function playAudioAndRedirect() {
+      const audio = document.getElementById('buttonClickAudio');
+      audio.play();
+      setTimeout(() => {
+        window.location.href = "game.html"; // Redirect to your game page
+      }, 1000);
+    }
+  </script>
 </body>
 
 </html>
